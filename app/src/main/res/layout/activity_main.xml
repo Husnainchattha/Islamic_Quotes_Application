@@ -10,18 +10,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.hussnain.islamicquotes.MainActivity">
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ToolbarTheme"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
         >
 <android.support.v7.widget.Toolbar
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/toolbar"
+
     />
         <android.support.design.widget.TabLayout
             android:layout_width="match_parent"
@@ -31,7 +30,6 @@
             android:id="@+id/tablayout"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
             app:tabTextColor="@color/tab"
             app:tabSelectedTextColor="@color/select"
             >
@@ -41,9 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/vpager"
-        android:layout_marginBottom="60dp"
-        android:layout_marginLeft="10dp"
-        android:layout_margin="10dp"
+        android:layout_marginBottom="55dp"
         >
     </android.support.v4.view.ViewPager>
 </LinearLayout>
@@ -52,11 +48,9 @@
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_navigation_bar"
         android:layout_alignParentBottom="true"
-        android:layout_margin="5dp"
         android:theme="@style/AppTheme.Dialog.Alert.Green"
         android:background="@color/colorbottom"
         app:itemTextColor="@color/tab"
         >
-
     </android.support.design.widget.BottomNavigationView>
 </RelativeLayout>

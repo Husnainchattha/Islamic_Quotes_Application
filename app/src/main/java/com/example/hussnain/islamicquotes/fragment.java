@@ -19,9 +19,7 @@ public class fragment extends Fragment{
     public EditText editText1;
     public EditText editText2;
     private Button btn;
-    private TextView textView;
     public String data;
-    public  String a=null;
     public interface Callback{
         void show();
     }
@@ -40,7 +38,6 @@ public class fragment extends Fragment{
         editText1=view.findViewById(R.id.first);
         editText2=view.findViewById(R.id.second);
         btn=view.findViewById(R.id.btnadd);
-       // textView=view.findViewById(R.id.fresult);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

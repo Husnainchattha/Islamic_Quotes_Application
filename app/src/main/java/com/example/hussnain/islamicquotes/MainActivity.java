@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 private ViewPager viewPager;
@@ -22,7 +23,7 @@ private TabLayout tabLayout;
         viewPager.setAdapter(pagerAdapter);
     }
     private class PagerAdapter extends FragmentPagerAdapter {
-        private String[]titalbar={"Ayat","Hadith","Noble"};
+       private String[]titalbar={"Today","Random","Previous"};
         public PagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -40,7 +41,6 @@ private TabLayout tabLayout;
                 case 2:
                     return SecondFragment.newInstance("Day","Random","Previous");
 
-
                 default:
                     return null;}
         }
@@ -50,7 +50,7 @@ private TabLayout tabLayout;
             return 3;
         }
 
-        @Override
+       @Override
         public CharSequence getPageTitle(int position) {
             return titalbar[position];
         }

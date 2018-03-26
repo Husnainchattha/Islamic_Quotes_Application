@@ -1,5 +1,6 @@
 package com.example.hussnain.islamicquotes;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,9 +11,21 @@ import android.widget.TextView;
 
 /**
  * Created by hussnain on 3/20/18.
+ *
  */
 
-public class fragmenttwo extends Fragment {
+public class FragmentTwo extends Fragment {
+    public interface Callback{
+        void viewCreated();
+    }
+    private Callback callback;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        callback=(Callback)context;
+    }
+
     public TextView textView;
     @Nullable
     @Override
@@ -24,4 +37,12 @@ public class fragmenttwo extends Fragment {
     public void setText(String text){
         textView.setText(text);
     }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        callback.viewCreated();
+    }
+
+
 }
