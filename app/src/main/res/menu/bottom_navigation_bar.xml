@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:title="Today"
-    android:id="@+id/today"
-    android:icon="@drawable/ic_today_black_24dp"
+<item android:title="Ayat"
+    android:id="@+id/todayitem"
     />
     <item
-    android:title="Random"
-    android:icon="@drawable/random"
-    android:id="@+id/random"/>
+    android:title="Hadith"
+    android:id="@+id/randomitem2"/>
     <item
-        android:title="Previous"
-        android:id="@+id/previous"
-        android:icon="@drawable/ic_reload">
+        android:title="Nobel"
+        android:id="@+id/previousitem">
 </item>
 </menu>
