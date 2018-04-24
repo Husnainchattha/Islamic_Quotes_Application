@@ -3,11 +3,11 @@
     android:shape="oval" >
     <solid android:color="#c0c0c0" />
     <stroke
-        android:width="3dp"
+        android:width="0dp"
         android:color="@color/select"
         >
     </stroke>
     <corners
-        android:radius="20dp">
+        android:radius="0dp">
     </corners>
 </shape>

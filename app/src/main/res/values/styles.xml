@@ -7,14 +7,17 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-     <style name="AppTheme." parent="Theme.AppCompat.Light.NoActionBar">
+     <style name="NoAction" parent="Theme.AppCompat.Light.NoActionBar">
+         <item name="colorPrimary">@color/colorPrimary</item>
+         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+         <item name="colorAccent">@color/colorAccent</item>
      </style>
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
-        <item name="colorPrimary">#FFE4C4</item>
+        <item name="colorPrimary">#00bfa5</item>
         <item name="colorAccent">#000</item>
     </style>
     <style name="AppTheme.Dialog.Alert.Green" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorPrimary">@color/material_green_500</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/material_green_700</item>
         <item name="colorAccent">@color/material_green_a700</item>
     </style>

@@ -1,16 +1,14 @@
 package com.example.hussnain.islamicquotes;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
     private Ayat ayatFragment;
@@ -21,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigationbar);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -31,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.todayitem:
                         if (ayatFragment==null){
                             ayatFragment=Ayat.newInstance();
+
                         }
                         selectedFragment = ayatFragment;
                         break;
@@ -60,5 +58,10 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    @Override
+    public void setActionBar(@Nullable Toolbar toolbar) {
+        super.setActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.ayat);
+    }
 }
 

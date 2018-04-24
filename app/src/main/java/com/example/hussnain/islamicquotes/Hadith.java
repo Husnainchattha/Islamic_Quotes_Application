@@ -28,10 +28,10 @@ public class Hadith extends Fragment {
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view=inflater.inflate(R.layout.hadith_layout,container,false);
         viewPager=view.findViewById(R.id.vpager);
         tabLayout=view.findViewById(R.id.tablayout);
@@ -51,17 +51,17 @@ public class Hadith extends Fragment {
 
             switch (position) {
                 case 0:
-                    return TodayHadithFragment.newInstance("hadithday");
+                    return TodayHadithFragment.newInstance();
 
                 case 1:
-                    return RandomHadithFragment.newInstance("Random Hadith");
+                    return RandomHadithFragment.newInstance();
 
                 case 2:
                     return PreviousHadithFragment.newInstance();
 
-
-                default:
-                    return null;}
+                    default:
+                    return null;
+            }
 
         }
 

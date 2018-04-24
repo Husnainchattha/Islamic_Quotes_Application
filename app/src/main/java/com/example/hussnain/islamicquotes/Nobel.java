@@ -48,14 +48,13 @@ public class Nobel extends Fragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return TodayNobelFragment.newInstance("todaynobel");
+                    return TodayNobelFragment.newInstance();
 
                 case 1:
                     return RandomNobelFragment.newInstance();
 
                 case 2:
                     return PreviousNobelFragment.newInstance();
-
 
                 default:
                     return null;}

@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,10 +35,10 @@ public class Ayat extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.ayat_layout,container,false);
-
         viewPager=view.findViewById(R.id.vpager);
         tabLayout=view.findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
+
         PagerAdapter pagerAdapter=new PagerAdapter(getChildFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         return view;
@@ -52,13 +54,13 @@ public class Ayat extends Fragment {
 
             switch (position) {
                 case 0:
-                    return TodayAyatFragment.newInstance("Today Ayat");
+                    return TodayAyatFragment.newInstance();
 
                 case 1:
-                    return RandomAyatFragment.newInstance("Random Ayat");
+                    return RandomAyatFragment.newInstance();
 
                 case 2:
-                    return PreviousAyatFragment.newInstance("Previous ayat");
+                    return PreviousAyatFragment.newInstance();
 
                 default:
                     return null;}

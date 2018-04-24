@@ -13,18 +13,14 @@ import android.widget.TextView;
  */
 
 public class TodayHadithFragment extends Fragment {
-    private static String hadith;
-    public static TodayHadithFragment newInstance(String hadit){
+    public static TodayHadithFragment newInstance(){
         TodayHadithFragment fragment=new TodayHadithFragment();
-        fragment.hadith=hadit;
         return fragment;
     }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.today_hadith_fragment,container,false);
-        TextView tv=view.findViewById(R.id.hadithd);
-        tv.setText(hadith);
         return view;
     }
 }

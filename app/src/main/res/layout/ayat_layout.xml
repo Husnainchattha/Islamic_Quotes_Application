@@ -30,8 +30,7 @@
                 android:id="@+id/tablayout"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                app:tabTextColor="@color/tab"
-                app:tabSelectedTextColor="@color/select"
+                app:tabSelectedTextColor="@color/white"
                 >
             </android.support.design.widget.TabLayout>
         </android.support.design.widget.AppBarLayout>

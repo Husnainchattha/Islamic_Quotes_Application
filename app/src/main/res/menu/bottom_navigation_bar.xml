@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <item android:title="Ayat"
     android:id="@+id/todayitem"
+    android:icon="@drawable/book"
     />
     <item
     android:title="Hadith"
-    android:id="@+id/randomitem2"/>
+    android:id="@+id/randomitem2"
+        android:icon="@drawable/ic_ka"/>
     <item
         android:title="Nobel"
-        android:id="@+id/previousitem">
+        android:id="@+id/previousitem"
+        android:icon="@drawable/personth">
 </item>
+    <item
+        android:id="@+id/ayat"
+        android:title="@string/ayat"
+        android:orderInCategory="100"
+        app:showAsAction="never">
+
+    </item>
+    <item
+        android:id="@+id/hadith"
+        android:title="@string/hadith"
+        android:orderInCategory="100"
+        app:showAsAction="never">
+
+    </item>
+    <item
+        android:id="@+id/noble"
+        android:title="@string/nodel"
+        android:orderInCategory="100"
+        app:showAsAction="never">
+
+    </item>
 </menu>

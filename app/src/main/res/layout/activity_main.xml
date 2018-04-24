@@ -16,9 +16,9 @@
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_navigation_bar"
         android:layout_alignParentBottom="true"
-        android:theme="@style/AppTheme.Dialog.Alert.Green"
-        android:background="@color/colorbottom"
+        android:background="#00bfa5"
         android:id="@+id/bottomnavigationbar"
+        android:theme="@style/AppTheme.Dialog.Alert.Green"
         >
     </android.support.design.widget.BottomNavigationView>
 

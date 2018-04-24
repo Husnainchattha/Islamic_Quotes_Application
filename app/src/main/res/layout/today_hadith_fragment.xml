@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent">
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/layout"
-        android:textSize="30dp"
-        android:id="@+id/hadithd"
-        />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
+
+    <com.bullhead.quranquotes.views.HadithOfDayView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:hadithTextSize="22sp"
+        app:hadithTextColor="@color/tab"
+        app:infoTextColor="@color/layout"
+        app:infoTextSize="12sp"
+        android:padding="10dp"
+        />
+    </ScrollView>
 </LinearLayout>
