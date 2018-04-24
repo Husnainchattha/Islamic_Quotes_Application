@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 public class Ayat extends Fragment {
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private Toolbar toolbar;
     public static Ayat newInstance() {
         Bundle bundle=new Bundle();
         Ayat fragment = new Ayat();
@@ -29,6 +31,7 @@ public class Ayat extends Fragment {
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Nullable
@@ -38,7 +41,8 @@ public class Ayat extends Fragment {
         viewPager=view.findViewById(R.id.vpager);
         tabLayout=view.findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
-
+        toolbar=view.findViewById(R.id.toolbar);
+        toolbar.setTitle("Ayat");
         PagerAdapter pagerAdapter=new PagerAdapter(getChildFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         return view;

@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 public final class Preferences {
    private SharedPreferences preferences;
    private static Preferences instance;
+   Context context;
 
     public static Preferences getInstance(Context context) {
         if (instance == null) {
@@ -32,5 +33,16 @@ public final class Preferences {
 
     public int getRandomNumber(){
         return preferences.getInt("number",-1);
+    }
+    public void saveTodayNoble(String noble){
+        preferences.edit().putString("noble",noble).apply();
+    }
+    public String getSavedTodayNoble(){
+        return preferences.getString("noble","n");
+    }
+    public void saveTodayhadith(String hadith1){
+        preferences.edit().putString("hadith",hadith1).apply();
+    }public String getSavedTodayHadith(){
+        return preferences.getString("hadith","h");
     }
 }

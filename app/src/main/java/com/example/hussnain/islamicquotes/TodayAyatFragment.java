@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.hussnain.islamicquotes.AyatPakage.ApiHandler;
 import com.example.hussnain.islamicquotes.AyatPakage.BaseResponse;
 import com.example.hussnain.islamicquotes.AyatPakage.Preferences;
+import com.example.hussnain.islamicquotes.Database.DatabaseeHelper;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -43,11 +44,11 @@ public class TodayAyatFragment extends Fragment {
         final TextView textView2 = view.findViewById(R.id.todayatname);
         final TextView textView1 = view.findViewById(R.id.date);
         final ProgressBar progressBar = view.findViewById(R.id.prograss);
-
+         getActivity().setTitle("Ayat");
         //check if already generated random today
         Preferences preferences = Preferences.getInstance(getContext());
-        long savedTime = preferences.getSavedTime();
-        long todayTime = System.currentTimeMillis();
+        final long savedTime = preferences.getSavedTime();
+        final long todayTime = System.currentTimeMillis();
         int random = preferences.getRandomNumber();
 
         if ((todayTime - savedTime) >= TimeUnit.DAYS.toMillis(1)) {
@@ -71,6 +72,12 @@ public class TodayAyatFragment extends Fragment {
                 String mytime = (DateFormat.format("dd/MM/yyyy", new java.util.Date()).toString());
                 textView1.setText(mytime);
                 textView2.setText(baseResponse.getData().getSurah().getName() + " | " + String.valueOf(baseResponse.getData().getSurah().getNumber()));
+               String saveayat = textView.getText().toString();
+               String savewrtr = textView2.getText().toString();
+               if ((todayTime-savedTime) >= TimeUnit.DAYS.toMillis(1)) {
+                   DatabaseeHelper databaseayat= new DatabaseeHelper(getContext());
+                databaseayat.saveAyat(saveayat,savewrtr);
+            }
             }
             @Override
             public void onError(String message) {

@@ -19,6 +19,7 @@
         app:infoTextColor="@color/layout"
         app:infoTextSize="12sp"
         android:padding="10dp"
+        android:id="@+id/hadithofday"
         />
     </ScrollView>
 </LinearLayout>

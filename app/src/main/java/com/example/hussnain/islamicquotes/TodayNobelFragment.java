@@ -15,6 +15,8 @@ import com.example.hussnain.islamicquotes.AyatPakage.ApiHandler;
 import com.example.hussnain.islamicquotes.AyatPakage.Preferences;
 import com.example.hussnain.islamicquotes.NobelPakage.NobelQuot;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by hussnain on 3/28/18.
  */
@@ -31,7 +33,7 @@ public class TodayNobelFragment extends Fragment {
       final TextView quot=view.findViewById(R.id.Quote);
       final TextView writername=view.findViewById(R.id.writer);
       final ProgressBar progressBar=view.findViewById(R.id.nobleprograss);
-      Preferences preferences=Preferences.getInstance(getContext());
+      final Preferences preferences=Preferences.getInstance(getContext());
       ApiHandler.getInstance().getTodayNoble(new ApiHandler.MyCallback1(){
           @Override
           public void onSuccess(NobelQuot nobelQuot) {
@@ -40,10 +42,14 @@ public class TodayNobelFragment extends Fragment {
               progressBar.setVisibility(View.GONE);
               quot.setText(nobelQuot.getContents().getQuotes().get(0).getQuote());
               writername.setText(nobelQuot.getContents().getQuotes().get(0).getAuthor());
-              String save=quot.getText().toString();
+             String save=quot.getText().toString();
               String save1=writername.getText().toString();
-              DatabaseeHelper database=new DatabaseeHelper(getContext());
-              database.saveNoble(save,save1);
+              preferences.saveTodayNoble(save);
+              final String todaynoble=preferences.getSavedTodayNoble();
+              if (save!=todaynoble){
+                  DatabaseeHelper databaseayat= new DatabaseeHelper(getContext());
+                  databaseayat.saveNoble(save,save1);
+              }
           }
 
           @Override

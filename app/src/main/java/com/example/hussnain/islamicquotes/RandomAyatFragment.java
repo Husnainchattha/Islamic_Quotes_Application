@@ -20,7 +20,6 @@ public class RandomAyatFragment extends Fragment {
 
     private QuranVerseView quranVerseView;
     private TextView textView;
-    private TextView textView1;
     public static RandomAyatFragment newInstance(){
         RandomAyatFragment fragment=new RandomAyatFragment();
         return fragment;
@@ -32,8 +31,6 @@ public class RandomAyatFragment extends Fragment {
         quranVerseView=view.findViewById(R.id.randomVerseView);
         textView=view.findViewById(R.id.textarabic);
         Verse currentVerse=quranVerseView.getCurrentVerse();
-        DatabaseeHelper dbHelper=new DatabaseeHelper(getContext());
-        dbHelper.saveAyat(currentVerse.getArabic(),currentVerse.getEnglish());
         textView.setText(currentVerse.getArabic());
         return view;
     }

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
 public class Hadith extends Fragment {
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private Toolbar toolbar;
     public static Hadith newInstance() {
         Hadith fragment = new Hadith();
         return fragment;
@@ -36,6 +38,8 @@ public class Hadith extends Fragment {
         viewPager=view.findViewById(R.id.vpager);
         tabLayout=view.findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
+        toolbar=view.findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.hadith);
         PagerAdapter pagerAdapter=new PagerAdapter(getChildFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         return view;

@@ -19,9 +19,6 @@ import com.example.hussnain.islamicquotes.Database.DatabaseeHelper;
  */
 
 public class RandomHadithFragment extends Fragment {
-    private RandomHadithView randomHadithView;
-    private TextView textView;
-    private TextView textView1;
     public static RandomHadithFragment newInstance(){
         RandomHadithFragment fragment=new RandomHadithFragment();
         return fragment;
@@ -30,11 +27,6 @@ public class RandomHadithFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.random_hadith_fragment,container,false);
-        randomHadithView=view.findViewById(R.id.hadithverse);
-        textView=view.findViewById(R.id.textarabic);
-        Hadith hadith=randomHadithView.getCurrentHadith();
-        DatabaseeHelper dbHelper=new DatabaseeHelper(getContext());
-        dbHelper.saveHadith(hadith.getText(),hadith.getBy());
         return view;
     }
 }
