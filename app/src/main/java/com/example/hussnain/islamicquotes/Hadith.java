@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +45,13 @@ public class Hadith extends Fragment {
         viewPager.setAdapter(pagerAdapter);
         return view;
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+    }
+
     private class PagerAdapter extends FragmentPagerAdapter {
         private String[]titalbar={"Today","Random","Previous"};
         public PagerAdapter(FragmentManager fm) {

@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TodayAyatFragment extends Fragment {
     private static TodayAyatFragment instance;
+
     SharedPreferences sharedPreferences;
     public static final String ayat = "ayat";
 
@@ -86,4 +88,6 @@ public class TodayAyatFragment extends Fragment {
         });
         return view;
     }
+
+
 }

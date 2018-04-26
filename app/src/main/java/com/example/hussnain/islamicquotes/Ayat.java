@@ -1,5 +1,6 @@
 package com.example.hussnain.islamicquotes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -11,6 +12,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -46,6 +49,11 @@ public class Ayat extends Fragment {
         PagerAdapter pagerAdapter=new PagerAdapter(getChildFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         return view;
+    }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
     }
     private class PagerAdapter extends FragmentPagerAdapter {
         private String[]titalbar={"Today","Random","Previous"};

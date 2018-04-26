@@ -44,12 +44,14 @@ public class TodayNobelFragment extends Fragment {
               writername.setText(nobelQuot.getContents().getQuotes().get(0).getAuthor());
              String save=quot.getText().toString();
               String save1=writername.getText().toString();
-              preferences.saveTodayNoble(save);
+
               final String todaynoble=preferences.getSavedTodayNoble();
-              if (save!=todaynoble){
+              if (!save.equals(todaynoble)){
                   DatabaseeHelper databaseayat= new DatabaseeHelper(getContext());
                   databaseayat.saveNoble(save,save1);
+                  preferences.saveTodayNoble(save);
               }
+
           }
 
           @Override

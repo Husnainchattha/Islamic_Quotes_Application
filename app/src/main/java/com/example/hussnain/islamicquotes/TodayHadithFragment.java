@@ -37,7 +37,6 @@ public class TodayHadithFragment extends Fragment {
         savehadith=preferences.getSavedTodayHadith();
 
         if (hadith1.equals(savehadith)) {
-            Toast.makeText(getContext(),"if condition",Toast.LENGTH_LONG).show();
         }
         else {
             DatabaseeHelper databasehadith = new DatabaseeHelper(getContext());
